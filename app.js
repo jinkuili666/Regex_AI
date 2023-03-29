@@ -3,7 +3,6 @@ function generateExample() {
   var text = document.getElementById("text").value;
   var xhr = new XMLHttpRequest();
   var API_KEY = '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';
-  console.log(`Bearer ${API_KEY}`);
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       var example = JSON.parse(this.responseText).choices[0].text;
