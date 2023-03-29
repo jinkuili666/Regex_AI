@@ -10,7 +10,7 @@ function generateExample() {
   };
   xhr.open(
     "POST",
-    "https://api.openai.com/v1/engines/davinci-codex/completions",
+    "https://api.openai.com/v1/engines/text-davinci-003/completions",
     true
   );
   xhr.setRequestHeader("Content-Type", "application/json");
