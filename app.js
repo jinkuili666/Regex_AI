@@ -3,6 +3,12 @@ function generateExample() {
   var text = document.getElementById("text").value;
   var xhr = new XMLHttpRequest();
   const API_ENDPOINT = 'https://api.vercel.com/v12/now/deployments';
+  if (typeof process === 'undefined') {
+    var process = {
+        env: { NODE_ENV: 'production' }
+    };
+};
+
   const API_KEY = process.env.OPENAI_API_KEY;
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
