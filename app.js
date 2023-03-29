@@ -14,7 +14,7 @@ function generateExample() {
     true
   );
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer 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"); 
+  xhr.setRequestHeader("Authorization", "Bearer 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"); 
   
   xhr.send(
     JSON.stringify({
