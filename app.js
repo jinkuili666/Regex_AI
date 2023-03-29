@@ -11,7 +11,7 @@ function generateExample() {
     }
   };
   xhr.open(
-    "GET",
+    "POST",
     "https://api.openai.com/v1/engines/davinci-codex/completions",
     true
   );
