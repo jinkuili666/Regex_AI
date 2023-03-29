@@ -21,7 +21,7 @@ function generateExample() {
     true
   );
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer"+ ${API_KEY}); 
+  xhr.setRequestHeader("Authorization", `Bearer ${API_KEY}`); 
   console.log("Bearer ${API_KEY}");
   xhr.send(
     JSON.stringify({
