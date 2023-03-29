@@ -1,3 +1,5 @@
+function generateExample() {
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -35,7 +37,7 @@ app.post("/", (req, res) => {
     res.send(JSON.parse(body).choices[0].text);
   });
 });
-
+};
 app.listen(process.env.PORT || 3000, () =>
   console.log(`Server running on port ${process.env.PORT || 3000}`)
 );
