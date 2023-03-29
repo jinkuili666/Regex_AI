@@ -14,8 +14,7 @@ function generateExample() {
     true
   );
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer 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"); 
-  
+  xhr.setRequestHeader("Authorization", `Bearer ${process.env.OPENAI_API_KEY}`);
   xhr.send(
     JSON.stringify({
       prompt: "请生成一段匹配正则表达式 " + regex + " 的示例文本：" + text + "\n",
