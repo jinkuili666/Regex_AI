@@ -2,10 +2,10 @@ function generateExample() {
   var regex = document.getElementById("regex").value;
   var text = document.getElementById("text").value;
   var xhr = new XMLHttpRequest();
-  const API_ENDPOINT = 'https://vercel.com/jinkuili666/regex-ai/deployments'; 
-  if (typeof process === 'undefined') {
+  const API_ENDPOINT = "https://vercel.com/jinkuili666/regex-ai/deployments"; 
+  if (typeof process === "undefined") {
     var process = {
-        env: { NODE_ENV: 'production' }
+        env: { NODE_ENV: "production" }
     };
 }
   const API_KEY = "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";
@@ -16,7 +16,7 @@ function generateExample() {
     }
   };
   xhr.open(
-    "POST",
+    "GET",
     "https://api.openai.com/v1/engines/davinci-codex/completions",
     true
   );
