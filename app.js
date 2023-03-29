@@ -14,7 +14,7 @@ function generateExample() {
     true
   );
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "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"); 
+  xhr.setRequestHeader("Authorization", "Bearer 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"); 
   xhr.send(
     JSON.stringify({
       prompt: "请生成一段匹配正则表达式 " + regex + " 的示例文本：" + text + "\n",
