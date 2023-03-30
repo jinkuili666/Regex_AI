@@ -1,44 +1,34 @@
-
 function generateExample() {
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
+import('axios').then(axios => {
+  var regex = document.getElementById("regex").value;
+  var text = document.getElementById("text").value;
+  const openai_api_key = process.env.OPENAI_API_KEY;
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-app.post("/", (req, res) => {
-  const prompt = "请生成一段匹配正则表达式 " + req.body.regex + " 的示例文本：" + req.body.text + "\n";
-  const maxTokens = 1024;
-  const temperature = 0.5;
-  const n = 1;
-  const stop = "\n";
-  const engine = "davinci-codex";
-
-  const request = require("request");
-  const options = {
-    method: "POST",
-    url: "https://api.openai.com/v1/engines/" + engine + "/completions",
-    headers: {
-      Authorization: "Bearer " + process.env.OPENAI_API_KEY,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      prompt,
-      max_tokens: maxTokens,
-      temperature: temperature,
-      n: n,
-      stop: stop,
-    }),
+  const data = {
+    "prompt": "请生成一段匹配正则表达式 " + regex + " 的示例文本：" + text + "\n",
+    "temperature": 0.7,
+    "max_tokens": 60,
+    "top_p": 1,
+    "frequency_penalty": 0,
+    "presence_penalty": 0,
+    "stop": "\n"
   };
 
-  request(options, (error, response, body) => {
-    if (error) throw new Error(error);
-    res.send(JSON.parse(body).choices[0].text);
-  });
-});
+  // 创建 HTTP 请求对象并设置 OpenAI API Key
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${openai_api_key}`
+    }
+  };
 
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`Server running on port ${process.env.PORT || 3000}`)
-);
+  // 发送 POST 请求
+  axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', data, config)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
 };
