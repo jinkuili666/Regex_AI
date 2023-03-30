@@ -10,11 +10,11 @@ function generateExample() {
   };
   xhr.open(
     "POST",
-    "https://api.openai.com/v1/engines/davinci/completions",
+    "https://api.openai.com/v1/engines/davinci-codex/completions",
     true
   );
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer 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");
+  xhr.setRequestHeader("Authorization", "Bearer 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");
   xhr.send(
     JSON.stringify({
       prompt: "请生成一段匹配正则表达式 " + regex + " 的示例文本：" + text + "\n",
