@@ -1,6 +1,8 @@
 function generateExample() {
   var regex = document.getElementById("regex").value;
   var text = document.getElementById("text").value;
+  // 引入 dotenv 模块
+  require('dotenv').config()
   const openai_api_key = process.env.OPENAI_API_KEY;
   console.log(openai_api_key);
   var xhr = new XMLHttpRequest();
