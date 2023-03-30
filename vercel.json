@@ -1,15 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "command": "npm install"
-  }
+    "builds": [
+        { "src": "index.html", "use": "@vercel/static" }
+    ]
 }
