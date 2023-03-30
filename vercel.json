@@ -4,7 +4,7 @@
     {
       "src": "package.json",
       "use": "@vercel/node",
-      "command": "npm install"
+      "buildCommand": "npm install"
     }
   ]
 }
