@@ -1,0 +1,10 @@
+{
+    "name": "ntt-tools",   // 发布时的包名 
+     "version": "1.0.0"，      // 版本号
+     "main": "index.js",     // 包的入口文件
+     "description": "提供了格式化时间，HTMLEscape的功能",            // 简短的描述信息
+     "keywords": ["dateFormat","escape"],    // 搜索关键字
+     "license": "ISC",  // 开源许可协议
+     "devDependencies": {},   // 只在项目开发阶段用到，项目上线之后不会用到
+     "dependencies": {}    // 专门用来记录您使用`npm install`命令安装了哪些包
+}
